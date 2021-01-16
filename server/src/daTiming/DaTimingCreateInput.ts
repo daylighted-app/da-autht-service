@@ -1,0 +1,2 @@
+class DaTimingCreateInput {}
+export { DaTimingCreateInput };

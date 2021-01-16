@@ -1,0 +1,2 @@
+class DaFeelingUpdateInput {}
+export { DaFeelingUpdateInput };

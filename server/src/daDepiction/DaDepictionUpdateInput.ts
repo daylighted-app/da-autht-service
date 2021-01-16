@@ -1,0 +1,2 @@
+class DaDepictionUpdateInput {}
+export { DaDepictionUpdateInput };
