@@ -1,0 +1,2 @@
+class DaRepeatableUpdateInput {}
+export { DaRepeatableUpdateInput };

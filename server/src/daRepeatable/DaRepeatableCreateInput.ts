@@ -1,0 +1,2 @@
+class DaRepeatableCreateInput {}
+export { DaRepeatableCreateInput };

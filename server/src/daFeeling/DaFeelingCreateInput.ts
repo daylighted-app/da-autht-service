@@ -1,0 +1,2 @@
+class DaFeelingCreateInput {}
+export { DaFeelingCreateInput };
