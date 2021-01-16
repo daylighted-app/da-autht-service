@@ -1,0 +1,2 @@
+class DaDepictionCreateInput {}
+export { DaDepictionCreateInput };

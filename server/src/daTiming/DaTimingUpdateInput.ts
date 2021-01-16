@@ -1,0 +1,2 @@
+class DaTimingUpdateInput {}
+export { DaTimingUpdateInput };
