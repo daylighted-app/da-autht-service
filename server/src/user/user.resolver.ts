@@ -14,8 +14,6 @@ import { DeleteUserArgs } from "./DeleteUserArgs";
 import { FindManyUserArgs } from "./FindManyUserArgs";
 import { FindOneUserArgs } from "./FindOneUserArgs";
 import { User } from "./User";
-import { FindManyDaylightArgs } from "../daylight/FindManyDaylightArgs";
-import { Daylight } from "../daylight/Daylight";
 
 @graphql.Resolver(() => User)
 @common.UseGuards(gqlBasicAuthGuard.GqlBasicAuthGuard, gqlACGuard.GqlACGuard)
@@ -172,29 +170,5 @@ export class UserResolver {
       }
       throw error;
     }
-  }
-
-  @graphql.ResolveField(() => [Daylight])
-  @nestAccessControl.UseRoles({
-    resource: "User",
-    action: "read",
-    possession: "any",
-  })
-  async daylights(
-    @graphql.Parent() parent: User,
-    @graphql.Args() args: FindManyDaylightArgs,
-    @gqlUserRoles.UserRoles() userRoles: string[]
-  ): Promise<Daylight[]> {
-    const permission = this.rolesBuilder.permission({
-      role: userRoles,
-      action: "read",
-      possession: "any",
-      resource: "Daylight",
-    });
-    const results = await this.service
-      .findOne({ where: { id: parent.id } })
-      // @ts-ignore
-      .daylights(args);
-    return results.map((result) => permission.filter(result));
   }
 }

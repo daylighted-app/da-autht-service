@@ -14,13 +14,7 @@ import BreadcrumbsContext from "./components/breadcrumbs/BreadcrumbsContext";
 import BreadcrumbsProvider from "./components/breadcrumbs/BreadcrumbsProvider";
 import useBreadcrumbs from "./components/breadcrumbs/use-breadcrumbs";
 import PrivateRoute from "./components/PrivateRoute";
-import { DaFeelingIndex } from "./daFeeling/DaFeelingIndex";
-import { DaDepictionIndex } from "./daDepiction/DaDepictionIndex";
 import { UserIndex } from "./user/UserIndex";
-import { DaTimingIndex } from "./daTiming/DaTimingIndex";
-import { DaylightIndex } from "./daylight/DaylightIndex";
-import { DaRepeatableIndex } from "./daRepeatable/DaRepeatableIndex";
-import { DelightIndex } from "./delight/DelightIndex";
 
 const App = (): React.ReactElement => {
   const history = useHistory();
@@ -89,16 +83,7 @@ const AppLayout = (): React.ReactElement => {
         <Page>
           <Switch>
             <PrivateRoute exact path="/" component={Navigation} />
-            <PrivateRoute path="/da-feelings" component={DaFeelingIndex} />
-            <PrivateRoute path="/da-depictions" component={DaDepictionIndex} />
             <PrivateRoute path="/users" component={UserIndex} />
-            <PrivateRoute path="/da-timings" component={DaTimingIndex} />
-            <PrivateRoute path="/daylights" component={DaylightIndex} />
-            <PrivateRoute
-              path="/da-repeatables"
-              component={DaRepeatableIndex}
-            />
-            <PrivateRoute path="/delights" component={DelightIndex} />
           </Switch>
         </Page>
       </MainLayout.Content>
