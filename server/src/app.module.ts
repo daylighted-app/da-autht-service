@@ -1,11 +1,5 @@
 import { Module } from "@nestjs/common";
-import { DaFeelingModule } from "./daFeeling/daFeeling.module";
-import { DaDepictionModule } from "./daDepiction/daDepiction.module";
 import { UserModule } from "./user/user.module";
-import { DaTimingModule } from "./daTiming/daTiming.module";
-import { DaylightModule } from "./daylight/daylight.module";
-import { DaRepeatableModule } from "./daRepeatable/daRepeatable.module";
-import { DelightModule } from "./delight/delight.module";
 import { ACLModule } from "./auth/acl.module";
 import { AuthModule } from "./auth/auth.module";
 import { MorganModule } from "nest-morgan";
@@ -17,13 +11,7 @@ import { GraphQLModule } from "@nestjs/graphql";
 @Module({
   controllers: [],
   imports: [
-    DaFeelingModule,
-    DaDepictionModule,
     UserModule,
-    DaTimingModule,
-    DaylightModule,
-    DaRepeatableModule,
-    DelightModule,
     ACLModule,
     AuthModule,
     MorganModule,

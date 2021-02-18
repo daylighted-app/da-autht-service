@@ -7,73 +7,12 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model DaFeeling {
-  createdAt  DateTime  @default(now())
-  id         String    @id @default(cuid())
-  updatedAt  DateTime  @updatedAt
-  Daylight   Daylight? @relation(fields: [daylightId], references: [id])
-  daylightId String?
-}
-
-model DaDepiction {
-  createdAt  DateTime  @default(now())
-  id         String    @id @default(cuid())
-  updatedAt  DateTime  @updatedAt
-  Daylight   Daylight? @relation(fields: [daylightId], references: [id])
-  daylightId String?
-}
-
 model User {
-  createdAt DateTime   @default(now())
-  daylights Daylight[]
-  id        String     @id @default(cuid())
+  createdAt DateTime @default(now())
+  id        String   @id @default(cuid())
   password  String
   phone     String
   roles     String[]
-  updatedAt DateTime   @updatedAt
-  username  String     @unique
-}
-
-model DaTiming {
-  createdAt DateTime   @default(now())
-  id        String     @id @default(cuid())
-  updatedAt DateTime   @updatedAt
-  Daylight  Daylight[]
-}
-
-model Daylight {
-  createdAt   DateTime      @default(now())
-  depictions  DaDepiction[]
-  feelings    DaFeeling[]
-  id          String        @id @default(cuid())
-  repeatition DaRepeatable?
-  score       Int?
-  timing      DaTiming?     @relation(fields: [daTimingId], references: [id])
-  updatedAt   DateTime      @updatedAt
-  userId      User?         @relation(fields: [userId], references: [id])
-  Delight     Delight?      @relation(fields: [delightId], references: [id])
-  delightId   String?
-  daTimingId  String?
-}
-
-model DaRepeatable {
-  createdAt  DateTime? @default(now())
-  daylight   Daylight  @relation(fields: [daylightId], references: [id])
-  id         String    @id @default(cuid())
-  daylightId String
-}
-
-model Delight {
-  createdAt DateTime   @default(now())
-  daylights Daylight[]
-  id        String     @id @default(cuid())
-  is        EnumIs[]
-  updatedAt DateTime   @updatedAt
-}
-
-enum EnumIs {
-  Repeatable
-  Timable
-  Evaluatable
-  Schedulable
+  updatedAt DateTime @updatedAt
+  username  String   @unique
 }
