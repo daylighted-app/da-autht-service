@@ -1,5 +1,6 @@
 import { Module } from "@nestjs/common";
 import { UserModule } from "./user/user.module";
+import { InvitationTicketModule } from "./invitationTicket/invitationTicket.module";
 import { ACLModule } from "./auth/acl.module";
 import { AuthModule } from "./auth/auth.module";
 import { MorganModule } from "nest-morgan";
@@ -12,6 +13,7 @@ import { GraphQLModule } from "@nestjs/graphql";
   controllers: [],
   imports: [
     UserModule,
+    InvitationTicketModule,
     ACLModule,
     AuthModule,
     MorganModule,

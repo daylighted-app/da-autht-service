@@ -1,5 +1,3 @@
-A submodule for https://github.com/daylighted-app/daylighted-app, may serve as the authentication server.
-
 This project was generated with [Amplication](https://amplication.com)
 
 It consists of two packages:

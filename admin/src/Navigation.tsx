@@ -6,6 +6,7 @@ const Navigation = (): React.ReactElement => {
   return (
     <>
       <NavigationItem name="Users" to="/users" />
+      <NavigationItem name="InvitationTickets" to="/invitation-tickets" />
     </>
   );
 };

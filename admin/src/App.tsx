@@ -15,6 +15,7 @@ import BreadcrumbsProvider from "./components/breadcrumbs/BreadcrumbsProvider";
 import useBreadcrumbs from "./components/breadcrumbs/use-breadcrumbs";
 import PrivateRoute from "./components/PrivateRoute";
 import { UserIndex } from "./user/UserIndex";
+import { InvitationTicketIndex } from "./invitationTicket/InvitationTicketIndex";
 
 const App = (): React.ReactElement => {
   const history = useHistory();
@@ -84,6 +85,10 @@ const AppLayout = (): React.ReactElement => {
           <Switch>
             <PrivateRoute exact path="/" component={Navigation} />
             <PrivateRoute path="/users" component={UserIndex} />
+            <PrivateRoute
+              path="/invitation-tickets"
+              component={InvitationTicketIndex}
+            />
           </Switch>
         </Page>
       </MainLayout.Content>

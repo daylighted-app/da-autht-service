@@ -1,0 +1,2 @@
+class InvitationTicketCreateInput {}
+export { InvitationTicketCreateInput };
